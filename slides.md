@@ -83,138 +83,87 @@ h1 {
 
 ---
 
-# Introduction 
+# Introduction
 
 Hello!! I'm Hayden and here's a little bit about me: 
 
 - Graduated from FSU in 2023 
 - Current NIU grad student 
 - Currently working on QT as part of $CP^2$ traineeship 
-  - dd
+  - Writing firmware using HLS for use in FPGA pipeline 
+  - Goal is to take in hit data and output clusters of adjacent hits quickly  
+<div style="float: right; width: 40%;">
+  <img src="path/to/your/image.jpg" alt="Description of image" style="width: 100%; height: auto;">
+</div>
+--- 
 
-### Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
+# FPGA
+Use code snippets and get the highlighting directly!
 ---
 
-# Code
+# HLS 
+Clustering algorithm is written in HLS for efficiency 
 
-Use code snippets and get the highlighting directly![^1]
+**Why?**
+- Parallelism 
+- Efficient handling of data stream input and output 
+- Less storage necessary and higher iteration frequency 
+- Good for kernelization and inclusion into general FPGA pipeline 
 
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
+Have continued to learn HLS pretty actively using AMD tutorials and other resources: 
 
 <style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
+  .split {
+    display: flex;
+    justify-content: space-between;
+  }
+  .left {
+    flex: 1;
+    padding-right: 20px;
+  }
+  .right {
+    flex: 1;
+    padding-left: 20px;
+  }
+  .right img {
+    width: 100%;
+    height: auto;
+  }
 </style>
 
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
+<div class="split">
+  <div class="left">
+    <!-- Left side content with link -->
+    <p>Check out this website: <a href="https://example.com">Example Website</a></p>
+  </div>
+  <div class="right">
+    <!-- Right side content with screenshot -->
+    <img src="path_to_your_screenshot_image.png" alt="Screenshot of the website">
+  </div>
 </div>
 
-
----
-class: px-20
 ---
 
-# Themes
+# I/O 
+Since this is a piece in a larger pipeline of other kernels in the FPGA, the inputs and outputs are important
 
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
+**Inputs**
+- Clusters with a position and bitmask 
+  - <u>Position</u>
+    - ABCStar chip 
+    - Strip number 
+  - <u>Bitmask</u>
+**Need to add something about the actual step in the pipeline before mine that gives me this info**
 
-<div grid="~ cols-2 gap-2" m="-t-2">
+**Outputs**
+- Clusters with position and size 
+  - <u>Position</u>
+    - ABCStar chip 
+    - Strip number 
+  - <u>Size</u>
+- Output is based off of adjacency of hits in completely local coordinates 
 
-```yaml
----
-theme: default
----
-```
 
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
 ---
 
 # Animations
