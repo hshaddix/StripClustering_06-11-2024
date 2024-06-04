@@ -147,6 +147,14 @@ Have continued to learn HLS pretty actively using AMD tutorials and other resour
 # I/O 
 Since this is a piece in a larger pipeline of other kernels in the FPGA, the inputs and outputs are important
 
+<style>
+  .slide-small-text {
+    font-size: 0.8em; /* Adjust the size as needed */
+  }
+</style>
+
+<div class="slide-small-text">
+
 **Inputs**
 - Clusters with a position and bitmask 
   - <u>Position</u>
@@ -162,7 +170,7 @@ Since this is a piece in a larger pipeline of other kernels in the FPGA, the inp
     - Strip number 
   - <u>Size</u>
 - Output is based off of adjacency of hits in completely local coordinates 
-
+</div>
 
 ---
 
