@@ -126,8 +126,6 @@ Hello!! I'm Hayden and here's a little bit about me:
   }
 </style>
 
-# Importance of FPGAs in Particle Detection
-
 <div class="two-column">
   <div class="column">
     <h2>Why FPGAs are Important</h2>
@@ -149,11 +147,6 @@ Hello!! I'm Hayden and here's a little bit about me:
 <div class="caption">
   <a href="https://tac-hep.org/assets/pdf/uw-gpu-fpga/2023-03-22-FPGA-HLS-Lecture-2.pdf" target="_blank">Link to slides: FPGA-HLS Lecture</a>
 </div>
-
----
-
-
-
 ---
 
 # HLS 
@@ -282,6 +275,35 @@ Since this is a piece in a larger pipeline of other kernels in the FPGA, the inp
   }
 </style>
 
+<style>
+  .two-column {
+    display: flex;
+  }
+  .column {
+    flex: 1;
+    padding: 10px;
+  }
+  .column img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .image-with-caption {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .image-with-caption img {
+    max-width: 100%;
+  }
+  .image-with-caption p {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #555;
+  }
+</style>
+
+## Nuanced Cases in Strip Clustering
+
 <div class="two-column">
   <div class="column">
     <!-- Left column content -->
@@ -290,9 +312,24 @@ Since this is a piece in a larger pipeline of other kernels in the FPGA, the inp
       <li>Gap Cases (holes in the bitmask)</li>
       <li>Clusters across chip boundaries</li>
     </ol>
+    <p>Simpler than pixels, but some nuance depending on the final necessary specifications:</p>
+      <ul>
+        <li>Overlapping hits</li>
+        <li>Merge chip boundary or truncate into separate small clusters</li>
+        <li>Smallest possible adjacent clusters (no gaps)</li>
+      </ul>
   </div>
   <div class="column">
-    <!-- Right column content with image -->
-    <img src="AcrossBoundary.png">
+    <!-- Right column content with images and captions -->
+    <div class="image-with-caption">
+      <img src="AcrossBoundary.png" alt="Merging across ABCStar boundary">
+      <p>Merging across ABCStar boundary</p>
+    </div>
+    <div class="image-with-caption">
+      <img src="Overlap.png" alt="Case with two separate input clusters with overlapping hits">
+      <p>Case with two separate input clusters with overlapping hits</p>
+    </div>
   </div>
 </div>
+
+---
