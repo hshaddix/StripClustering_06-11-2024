@@ -44,11 +44,6 @@ Slides by: Hayden Shaddix
     <carbon-logo-github />
   </a>
 </div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
-
 ---
 
 # Talk Contents 
@@ -109,8 +104,56 @@ Hello!! I'm Hayden and here's a little bit about me:
 
 --- 
 
-# FPGA
-Use code snippets and get the highlighting directly!
+# FPGAs
+<style>
+  .two-column {
+    display: flex;
+    align-items: center;
+  }
+  .column {
+    flex: 1;
+    padding: 10px;
+  }
+  .column img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .caption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.8em;
+  }
+</style>
+
+# Importance of FPGAs in Particle Detection
+
+<div class="two-column">
+  <div class="column">
+    <h2>Why FPGAs are Important</h2>
+    <p>It is important to note why FPGAs specifically are important for this context:</p>
+    <ul>
+      <li>Parallel Processing</li>
+      <li>Customizable and changeable hardware</li>
+      <li>Low Latency/Efficiency</li>
+      <li>Resource availability (LUT, BRAM, etc.)</li>
+      <li>Scalability (multiple kernels)</li>
+    </ul>
+  </div>
+  <div class="column">
+    <!-- Replace 'path_to_fpga_diagram.png' with the actual path to your FPGA diagram image -->
+    <img src="FPGA.png" alt="Diagram of an FPGA">
+  </div>
+</div>
+
+<div class="caption">
+  <a href="https://tac-hep.org/assets/pdf/uw-gpu-fpga/2023-03-22-FPGA-HLS-Lecture-2.pdf" target="_blank">Link to slides: FPGA-HLS Lecture</a>
+</div>
+
+---
+
+
+
 ---
 
 # HLS 
