@@ -353,6 +353,7 @@ There are a few important things testing this code as it is developed
 --- 
 
 # Kernelization 
+Short long-term goal is for a confined clustering kernel to test with larger FPGA pipeline. From my understanding, there are 3 major components necessary to build the kernel and my current working status on each varies: 
 
 <style>
   .two-column {
@@ -382,7 +383,7 @@ There are a few important things testing this code as it is developed
   }
 </style>
 
-# Project Components and Status
+## Project Components and Status
 
 <div class="two-column">
   <div class="column">
@@ -411,19 +412,6 @@ There are a few important things testing this code as it is developed
     </table>
   </div>
   <div class="column">
-    <!-- Right column content with images and captions -->
-    <div class="image-with-caption">
-      <img src="AcrossBoundary.png" alt="Merging across ABCStar boundary">
-      <p>Merging across ABCStar boundary</p>
-    </div>
-    <div class="image-with-caption">
-      <img src="Truncate.png" alt="Case of creating succinct clusters rather than merging into one large cluster">
-      <p>Case of creating succinct clusters rather than merging into one large cluster</p>
-    </div>
-    <div class="image-with-caption">
-      <img src="Overlap.png" alt="Case with two separate input clusters with overlapping hits">
-      <p>Case with two separate input clusters with overlapping hits</p>
-    </div>
   </div>
 </div>
 
