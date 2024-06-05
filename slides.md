@@ -323,7 +323,102 @@ Since this is a piece in a larger pipeline of other kernels in the FPGA, the inp
     <!-- Right column content with images and captions -->
     <div class="image-with-caption">
       <img src="AcrossBoundary.png" alt="Merging across ABCStar boundary">
+      <p>**Merging across ABCStar boundary**</p>
+    </div>
+    <div class="image-with-caption">
+      <img src="Overlap.png" alt="Case with two separate input clusters with overlapping hits">
+      <p>**Case with two separate input clusters with overlapping hits**</p>
+    </div>
+  </div>
+</div>
+---
+---
+
+# Testing and Optimization
+
+There are a few important things testing this code as it is developed 
+
+1) C Simulation (Test Bench) 
+    - Includes several simple cases defined by the user 
+    - Easily manipulated
+    - Simple testing of input and outputs 
+2) C Synthesis (Vitis)
+    - Checks viability of pipelining 
+    - Gives practical readings (Latency/clock-cycle, etc)
+    - Allows for and suggests optimizations 
+3) Test vectors (not yet used)
+    - More realistic input 
+    - Greater length/variability input stream 
+
+--- 
+
+# Kernelization 
+
+<style>
+  .two-column {
+    display: flex;
+    align-items: flex-start;
+  }
+  .column {
+    flex: 1;
+    padding: 10px;
+  }
+  .column img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .image-with-caption {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .image-with-caption img {
+    max-width: 100%;
+  }
+  .image-with-caption p {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #555;
+  }
+</style>
+
+# Project Components and Status
+
+<div class="two-column">
+  <div class="column">
+    <!-- Left column content with table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Components</th>
+          <th>Current Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Working HLS</td>
+          <td>Still testing, optimization has been the backburner</td>
+        </tr>
+        <tr>
+          <td>Test Bench</td>
+          <td>Created already, should be easily adaptable for different cases</td>
+        </tr>
+        <tr>
+          <td>Project file</td>
+          <td>Skeleton version in the works, adapting tutorial version to suit the clustering code</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="column">
+    <!-- Right column content with images and captions -->
+    <div class="image-with-caption">
+      <img src="AcrossBoundary.png" alt="Merging across ABCStar boundary">
       <p>Merging across ABCStar boundary</p>
+    </div>
+    <div class="image-with-caption">
+      <img src="Truncate.png" alt="Case of creating succinct clusters rather than merging into one large cluster">
+      <p>Case of creating succinct clusters rather than merging into one large cluster</p>
     </div>
     <div class="image-with-caption">
       <img src="Overlap.png" alt="Case with two separate input clusters with overlapping hits">
