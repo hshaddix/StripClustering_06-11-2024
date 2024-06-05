@@ -64,11 +64,6 @@ The last comment block of each slide will be treated as slide notes. It will be 
 <br>
 <br>
 
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
 <style>
 h1 {
   background-color: #2B90B6;
@@ -92,9 +87,26 @@ Hello!! I'm Hayden and here's a little bit about me:
 - Currently working on QT as part of $CP^2$ traineeship 
   - Writing firmware using HLS for use in FPGA pipeline 
   - Goal is to take in hit data and output clusters of adjacent hits quickly  
-<div style="float: right; width: 40%;">
-  <img src="path/to/your/image.jpg" alt="Description of image" style="width: 100%; height: auto;">
+<style>
+  .image-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end; /* Align items to the end to move image to the bottom */
+    height: 100vh; /* Ensure the container takes up the full height of the viewport */
+  }
+  .image-container img {
+    max-width: 40%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+</style>
+
+<div class="image-container">
+  <img src="Hayden.jpeg" alt="Me (bottom right) and family">
 </div>
+
+
+
 --- 
 
 # FPGA
@@ -110,7 +122,7 @@ Clustering algorithm is written in HLS for efficiency
 - Less storage necessary and higher iteration frequency 
 - Good for kernelization and inclusion into general FPGA pipeline 
 
-Have continued to learn HLS pretty actively using AMD tutorials and other resources: 
+Have continued to learn HLS pretty actively using online manuals and resources: 
 
 <style>
   .split {
@@ -134,11 +146,11 @@ Have continued to learn HLS pretty actively using AMD tutorials and other resour
 <div class="split">
   <div class="left">
     <!-- Left side content with link -->
-    <p>Check out this website: <a href="https://example.com">Example Website</a></p>
+    <p> <a href="https://docs.amd.com/r/en-US/ug1399-vitis-hls/Tutorials-and-Examples">Vitis AMD Tutorials</a></p>
   </div>
   <div class="right">
     <!-- Right side content with screenshot -->
-    <img src="path_to_your_screenshot_image.png" alt="Screenshot of the website">
+    <img src="AMD.png">
   </div>
 </div>
 
@@ -210,4 +222,34 @@ Since this is a piece in a larger pipeline of other kernels in the FPGA, the inp
 </div>
 
 ---
-# Important Cases to Highlight 
+---
+# Implementation/Application 
+
+<style>
+  .two-column {
+    display: flex;
+  }
+  .column {
+    flex: 1;
+    padding: 10px;
+  }
+  .column img {
+    width: 100%;
+    height: auto;
+  }
+</style>
+
+<div class="two-column">
+  <div class="column">
+    <!-- Left column content -->
+    <p>There are a few interesting cases that need to be treated explicitly:</p>
+    <ol>
+      <li>Gap Cases (holes in the bitmask)</li>
+      <li>Clusters across chip boundaries</li>
+    </ol>
+  </div>
+  <div class="column">
+    <!-- Right column content with image -->
+    <img src="AcrossBoundary.png">
+  </div>
+</div>
