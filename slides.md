@@ -241,7 +241,7 @@ Since this is a piece in a larger pipeline of other kernels in the FPGA, the inp
 <div class="two-column">
   <div class="column">
     <!-- Left column content -->
-    <h2>HLS Algorithm Overview</h2>
+    <h2>Code Logic Overview</h2>
     <p>The HLS algorithm is relatively straightforward in its general structure:</p>
     <ol>
       <li>Takes in cluster information</li>
@@ -413,6 +413,43 @@ Short long-term goal is for a confined clustering kernel to test with larger FPG
   </div>
   <div class="column">
   </div>
+</div>
+
+---
+
+# Conclusion 
+
+<style>
+  .small-text {
+    font-size: 0.8em; /* Adjust the size as needed */
+  }
+</style>
+
+<div class="small-text">
+  <p>This clustering code and the following kernel will be an important part of the FPGA EF Tracking Pipeline. The major facets of the work I have and will be continuing with are:</p>
+  <ol>
+    <li>Developing HLS code for strip clustering
+      <ul>
+        <li>Addressing specific cases</li>
+        <li>Working cooperatively to determine what is required at a given stage of development</li>
+      </ul>
+    </li>
+    <li>Testing HLS code
+      <ul>
+        <li>Test bench and trivial cases</li>
+        <li>Ensuring parallel pipelining</li>
+        <li>Using realistic input to test algorithm</li>
+      </ul>
+    </li>
+    <li>Kernalization/Optimization
+      <ul>
+        <li>Creating a kernel</li>
+        <li>Optimizing the workflow and structure</li>
+        <li>Paying attention to specific needs of the overall pipeline and connecting my project</li>
+      </ul>
+    </li>
+  </ol>
+  <p>I am looking forward to continuing to work with you all to get things in order!!!</p>
 </div>
 
 ---
