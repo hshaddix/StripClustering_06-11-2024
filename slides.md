@@ -75,31 +75,56 @@ h1 {
 
 # Introduction
 
-Hello!! I'm Hayden and here's a little bit about me: 
-
-- Graduated from FSU in 2023 
-- Current NIU grad student 
-- Currently working on QT as part of $CP^2$ traineeship 
-  - Writing firmware using HLS for use in FPGA pipeline 
-  - Goal is to take in hit data and output clusters of adjacent hits quickly  
 <style>
-  .image-container {
+  .two-column {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end; /* Align items to the end to move image to the bottom */
-    height: 100vh; /* Ensure the container takes up the full height of the viewport */
+    justify-content: space-between;
+    align-items: center;
   }
-  .image-container img {
-    max-width: 40%;
-    max-height: 100%;
+  .left-column {
+    flex: 1;
+    padding: 20px;
+    font-size: 0.8em; /* Smaller font size */
+  }
+  .right-column {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .right-column img {
+    max-width: 80%; /* Adjust image size */
+    height: auto;
     object-fit: contain;
   }
 </style>
 
-<div class="image-container">
-  <img src="Hayden.jpeg" alt="Me (bottom right) and family">
+
+<div class="two-column">
+  <div class="left-column">
+    <ul>
+      <li>Family person</li>
+      <li>Likes to spend time outdoors</li>
+      <li>Graduated from FSU in 2023</li>
+      <li>Current NIU grad student</li>
+      <li>Currently working on QT as part of CP^2 traineeship
+        <ul>
+          <li>Writing firmware using HLS for use in FPGA pipeline</li>
+          <li>Goal is to take in hit data and output clusters of adjacent hits quickly</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="right-column">
+    <img src="Hayden.png" alt="Me (bottom right) and family">
+  </div>
 </div>
 
+---
+
+
+---
 
 
 --- 
@@ -208,8 +233,7 @@ Since this is a piece in a larger pipeline of other kernels in the FPGA, the inp
   - <u>Position</u>
     - ABCStar chip 
     - Strip number 
-  - <u>Bitmask</u>
-**Need to add something about the actual step in the pipeline before mine that gives me this info**
+  - <u>Bitmask</u> : Map of following 3 hit positions 
 
 **Outputs**
 - Clusters with position and size 
