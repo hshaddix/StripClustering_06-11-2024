@@ -9,6 +9,10 @@
     "@slidev/cli": "latest",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
+    "playwright": "^1.44.1",
     "slidev-theme-dracula": "^0.2.0"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.44.1"
   }
 }

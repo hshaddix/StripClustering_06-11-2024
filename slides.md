@@ -29,11 +29,6 @@ Slides by: Hayden Shaddix
 
 06/11/2024
 
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-     Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
-</div>
 
 <div class="abs-br m-6 flex gap-2">
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
@@ -49,12 +44,13 @@ Slides by: Hayden Shaddix
 # Talk Contents 
 
 - **Introduction** - Little bit about me 
-- **FPGA** - Pipeline, why FPGAs? 
-- **HLS** - Why HLS rather than other formats? How does it fit? 
-- **I/O of Expected Kernel** - embedding Vue components to enhance your expressions
+- **Clustering and FPGAs** - How is clustering useful / tying into FPGAs 
+- **HLS** - Why HLS? What makes it a good fit for clustering?
+- **I/O of Algorithm** - What format will we recieve and output?
 - **General Algorithm Overview** - Logic flow and important cases 
 - **Testing** - Troubleshooting, Test Bench, optimization 
 - **Kernelization** - Progress/Process 
+- **Conclusion**
 
 <br>
 <br>
@@ -120,16 +116,9 @@ h1 {
     <img src="Hayden.png" alt="Me (bottom right) and family">
   </div>
 </div>
-
----
-
-
----
-
-
 --- 
 
-# FPGAs
+# Clustering and FPGAs
 <style>
   .two-column {
     display: flex;
@@ -153,18 +142,16 @@ h1 {
 
 <div class="two-column">
   <div class="column">
-    <h2>Why FPGAs are Important</h2>
-    <p>It is important to note why FPGAs specifically are important for this context:</p>
+    <p>Clustering is an important part of any detector pipeline; some of the most important features of clustering especially in an FPGA context is it:</p>
     <ul>
-      <li>Parallel Processing</li>
-      <li>Customizable and changeable hardware</li>
-      <li>Low Latency/Efficiency</li>
-      <li>Resource availability (LUT, BRAM, etc.)</li>
-      <li>Scalability (multiple kernels)</li>
+      <li>Reduces volume of data</li>
+      <li>Filters out noise / sorts through input stream</li>
+      <li>Processes and outputs compact clusters in real-time</li>
+      <li>Is much more efficient</li>
+      <li>Fits well in a scaleable pipeline</li>
     </ul>
   </div>
   <div class="column">
-    <!-- Replace 'path_to_fpga_diagram.png' with the actual path to your FPGA diagram image -->
     <img src="FPGA.png" alt="Diagram of an FPGA">
   </div>
 </div>
@@ -175,13 +162,12 @@ h1 {
 ---
 
 # HLS 
-Clustering algorithm is written in HLS for efficiency 
+Clustering algorithm is written in HLS for several reasons:
 
-**Why?**
-- Parallelism 
-- Efficient handling of data stream input and output 
-- Less storage necessary and higher iteration frequency 
-- Good for kernelization and inclusion into general FPGA pipeline 
+- Abstracts Complexity: written more similarly to a high-level language (C/C++)
+- Parallelism: HLS allows us to handle multiple data stream simultaneously
+- Testability: Quick iterations and testing 
+- Customizable Hardware: Easy to change if project demands change  
 
 Have continued to learn HLS pretty actively using online manuals and resources: 
 
@@ -422,7 +408,7 @@ Short long-term goal is for a confined clustering kernel to test with larger FPG
       <tbody>
         <tr>
           <td>Working HLS</td>
-          <td>Still testing, optimization has been the backburner</td>
+          <td>Still testing, optimization has been on the backburner</td>
         </tr>
         <tr>
           <td>Test Bench</td>
@@ -476,4 +462,3 @@ Short long-term goal is for a confined clustering kernel to test with larger FPG
   <p>I am looking forward to continuing to work with you all to get things in order!!!</p>
 </div>
 
----
